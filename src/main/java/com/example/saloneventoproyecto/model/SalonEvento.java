@@ -1,19 +1,17 @@
-package com.example.saloneventoproyecto.entidades;
+package com.example.saloneventoproyecto.model;
 
 import jakarta.persistence.*;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
-import java.awt.*;
 import java.io.Serializable;
 import java.util.List;
 
 @Entity
-@Getter
-@Setter
+@Data
 @ToString
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 
 public class SalonEvento implements Serializable {
     @Id

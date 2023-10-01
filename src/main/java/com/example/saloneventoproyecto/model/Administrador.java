@@ -1,14 +1,11 @@
-package com.example.saloneventoproyecto.entidades;
+package com.example.saloneventoproyecto.model;
 
-import com.example.saloneventoproyecto.entidades.Usuario;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.io.Serializable;
-import java.util.List;
 
 @Entity
 @Getter

@@ -1,4 +1,4 @@
-package com.example.saloneventoproyecto.entidades;
+package com.example.saloneventoproyecto.model;
 
 import jakarta.persistence.*;
 import lombok.EqualsAndHashCode;
