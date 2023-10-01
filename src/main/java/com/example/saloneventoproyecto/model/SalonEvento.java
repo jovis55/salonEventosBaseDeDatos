@@ -16,7 +16,7 @@ import java.util.List;
 public class SalonEvento implements Serializable {
     @Id
     @EqualsAndHashCode.Include
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="idSalon", length = 10, nullable = false)
     private int idSalon;
 

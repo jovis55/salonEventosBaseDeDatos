@@ -16,7 +16,7 @@ import java.io.Serializable;
 public class Resenia implements Serializable {
     @Id
     @EqualsAndHashCode.Include
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="idReseña", length = 10, nullable = false)
     private int idReseña;
 

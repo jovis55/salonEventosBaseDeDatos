@@ -17,7 +17,7 @@ import java.time.LocalDateTime;
 public class Notificacion implements Serializable {
     @Id
     @EqualsAndHashCode.Include
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="idNotificacion", length = 10, nullable = false)
     private int idNotificacion;
 

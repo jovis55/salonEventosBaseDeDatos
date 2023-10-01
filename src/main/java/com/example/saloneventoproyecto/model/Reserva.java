@@ -18,7 +18,7 @@ import java.util.List;
 public class Reserva implements Serializable {
     @Id
     @EqualsAndHashCode.Include
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="idReserva", length = 10, nullable = false)
     private int idReserva;
 
