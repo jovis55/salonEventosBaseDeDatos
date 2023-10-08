@@ -1,5 +1,6 @@
 package com.example.saloneventoproyecto.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -31,11 +32,13 @@ public class SalonEvento implements Serializable {
 
     @Column(name="servicioIncluido", length = 3, nullable = false)
     private String servicioIncluido;
+/**
+    @ElementCollection
+    @CollectionTable(name = "fotos_salon")
+    @Column(name = "fotos", nullable = true)
+    private List<byte[]> fotos;*/
 
-    @Column(name="foto", length = 100, nullable = false)
-    private String foto;
-
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     private Duenio duenio;
 
     @OneToMany(mappedBy = "salon")
