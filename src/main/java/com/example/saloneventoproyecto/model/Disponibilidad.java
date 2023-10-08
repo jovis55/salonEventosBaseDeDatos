@@ -1,10 +1,7 @@
 package com.example.saloneventoproyecto.model;
 
 import jakarta.persistence.*;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -12,7 +9,7 @@ import java.util.Date;
 @Getter
 @Setter
 @ToString
-
+@Data
 public class Disponibilidad implements Serializable {
 
     @Id

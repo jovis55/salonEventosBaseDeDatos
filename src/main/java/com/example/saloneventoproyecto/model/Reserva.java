@@ -1,10 +1,7 @@
 package com.example.saloneventoproyecto.model;
 
 import jakarta.persistence.*;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -14,7 +11,7 @@ import java.util.List;
 @Getter
 @Setter
 @ToString
-
+@Data
 public class Reserva implements Serializable {
     @Id
     @EqualsAndHashCode.Include

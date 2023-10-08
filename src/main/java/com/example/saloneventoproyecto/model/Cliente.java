@@ -1,19 +1,18 @@
 package com.example.saloneventoproyecto.model;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
+@EqualsAndHashCode(callSuper = true)
 @Entity
 @Getter
 @Setter
 @ToString
-
+@Data
 public class Cliente extends Usuario implements Serializable {
 
     @Column(name="nombre", length = 100, nullable = false)
