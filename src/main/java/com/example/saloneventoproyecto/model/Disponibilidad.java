@@ -12,6 +12,9 @@ import java.util.Date;
 @Data
 public class Disponibilidad implements Serializable {
 
+    //Se arreglaron distintos errores de incompatibilidad en esta clase
+    //al momento de ser relacionada con otras clases y con la base
+    //de datos
     @Id
     @EqualsAndHashCode.Include
     @GeneratedValue(strategy = GenerationType.IDENTITY)

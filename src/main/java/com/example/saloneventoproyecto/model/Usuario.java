@@ -16,6 +16,9 @@ import java.io.Serializable;
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Data
 public class Usuario implements Serializable {
+    //Se arreglaron distintos errores de incompatibilidad en esta clase
+    //al momento de ser relacionada con otras clases y con la base
+    //de datos
     @Id
     @EqualsAndHashCode.Include
     @Column(name="idUsuario", length = 10, nullable = false)
