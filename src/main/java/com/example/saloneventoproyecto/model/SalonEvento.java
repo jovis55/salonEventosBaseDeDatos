@@ -24,19 +24,18 @@ public class SalonEvento implements Serializable {
     @Column(name="nombre", length = 100, nullable = false)
     private String nombre;
 
+
     @Column(name="capacidad", length = 100, nullable = false)
     private String capacidad;
 
     @Column(name="ubicacion", length = 100, nullable = false)
     private String ubicacion;
 
-    @Column(name="servicioIncluido", length = 3, nullable = false)
+    @Column(name="servicioIncluido", length = 200, nullable = false)
     private String servicioIncluido;
-/**
-    @ElementCollection
-    @CollectionTable(name = "fotos_salon")
-    @Column(name = "fotos", nullable = true)
-    private List<byte[]> fotos;*/
+
+    @Column(name = "imagen_url", length = 200, nullable = true)
+    private String imagenUrl;
 
     @ManyToOne(fetch = FetchType.EAGER)
     private Duenio duenio;

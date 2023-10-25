@@ -15,5 +15,6 @@ public interface SalonEventoService {
 
     Optional<SalonEvento> obtenerPorId(int idSalon);
 
-    boolean eliminarSalon(int idSalon);
+    boolean eliminarSalon(int  idSalon);
 }
+
