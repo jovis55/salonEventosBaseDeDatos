@@ -9,7 +9,7 @@ import java.util.Optional;
 
 public interface SalonEventoService {
 
-
+    SalonEvento guardarSalonDispo(SalonEvento salonEvento);
     ArrayList<SalonEvento> obtenerSalones();
     SalonEvento guardarSalon(SalonEvento salonEvento);
 

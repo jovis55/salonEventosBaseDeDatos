@@ -43,7 +43,10 @@ public class SalonEvento implements Serializable {
     @OneToMany(mappedBy = "salon")
     private List<Resenia> reseniaList;
 
-    @OneToMany(mappedBy = "salon")
+    //@OneToMany(mappedBy = "salon",fetch = FetchType.EAGER)
+    @JsonManagedReference
+    @OneToMany(mappedBy = "salon", cascade = CascadeType.ALL)
+
     private List<Disponibilidad> disponibilidadList ;
 
     @OneToMany(mappedBy = "salon")

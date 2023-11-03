@@ -1,14 +1,18 @@
 package com.example.saloneventoproyecto.web;
 
+import com.example.saloneventoproyecto.model.Disponibilidad;
 import com.example.saloneventoproyecto.model.Duenio;
 import com.example.saloneventoproyecto.model.SalonEvento;
 import com.example.saloneventoproyecto.services.*;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
@@ -29,6 +33,13 @@ public class SalonEventoController {
     public ArrayList<SalonEvento> getSalones() {
         return salonEventoService.obtenerSalones();
     }
+
+    @PutMapping("/crearSalonDispo")
+    public SalonEvento guardarSalonDispo(@RequestBody SalonEvento salonEvento){
+        System.out.println("SE VA A A REGUARDAR EL SALON CON DISPO");
+        return salonEventoService.guardarSalonDispo(salonEvento);
+    }
+
 
 
     @PostMapping()
@@ -60,7 +71,6 @@ public class SalonEventoController {
     }
 
 
-
     @DeleteMapping(path = "/{idSalon}")
     public String eliminarSalon(@PathVariable int idSalon) {
         boolean ok = salonEventoService.eliminarSalon(idSalon);
@@ -73,6 +83,19 @@ public class SalonEventoController {
     @GetMapping(path = "/{idSalon}")
     public Optional<SalonEvento> obtenerPorId(@PathVariable int idSalon){
         return salonEventoService.obtenerPorId(idSalon);
+    }
+
+
+    @PutMapping("/{idSalon}/actualizar-disponibilidades")
+    public SalonEvento actualizarDisponibilidades(
+            @PathVariable int idSalon,
+            @RequestBody List<Disponibilidad> nuevasDisponibilidades) {
+        System.out.println("se va a actualizar con el controlador");
+        System.out.println(idSalon);
+        System.out.println(nuevasDisponibilidades);
+        System.out.println(nuevasDisponibilidades.size());
+
+        return salonEventoService.actualizarDisponibilidades(idSalon, nuevasDisponibilidades);
     }
 
 
