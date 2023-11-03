@@ -1,10 +1,9 @@
 package com.example.saloneventoproyecto.web;
 
 
+import com.example.saloneventoproyecto.exception.Excepciones;
 import com.example.saloneventoproyecto.model.Cliente;
-import com.example.saloneventoproyecto.model.Duenio;
 import com.example.saloneventoproyecto.services.ClienteImpl;
-import com.example.saloneventoproyecto.services.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,7 +26,14 @@ public class ClienteController {
         return this.clienteService.guardarCliente(cliente);
     }
     @GetMapping(path = "/{idUsuario}")
-    public Optional<Cliente> obtenerPorId(@PathVariable String idUsuario){
-        return clienteService.obtenerPorId(idUsuario);
+    public Cliente obtenerPorId(@PathVariable String idUsuario) {
+        Optional<Cliente> clienteOptional = clienteService.obtenerPorId(idUsuario);
+
+        if (clienteOptional.isPresent()) {
+            return clienteOptional.get();
+        } else {
+            throw new Excepciones(idUsuario);
+        }
     }
+
 }

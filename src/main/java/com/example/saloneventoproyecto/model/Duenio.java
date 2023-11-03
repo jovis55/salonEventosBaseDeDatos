@@ -34,7 +34,6 @@ public class Duenio extends Usuario implements Serializable {
     private String direccion;
 
     @OneToMany(mappedBy = "duenio", fetch = FetchType.EAGER )
-
     private List<SalonEvento> salonEventoList ;
 
     @OneToMany(mappedBy = "duenio")

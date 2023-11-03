@@ -1,5 +1,7 @@
 package com.example.saloneventoproyecto.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -30,7 +32,12 @@ public class Disponibilidad implements Serializable {
     @Column(name="fecha", nullable = false)
     private Date fecha;
 
+    //@ManyToOne(fetch = FetchType.EAGER)
+    //@ManyToOne
+    //@JoinColumn(name = "salon_evento_idSalon")
+    @JsonBackReference
     @ManyToOne
+    @JoinColumn(name = "salon_evento_id_salon")
     private SalonEvento salon;
 
 }
