@@ -80,6 +80,8 @@ public class SalonEventoController {
             return "No pudo eliminar el salon con id" + idSalon;
         }
     }
+
+    //Se utiliza al momento de filtrar los salones
     @GetMapping(path = "/{idSalon}")
     public Optional<SalonEvento> obtenerPorId(@PathVariable int idSalon){
         return salonEventoService.obtenerPorId(idSalon);
