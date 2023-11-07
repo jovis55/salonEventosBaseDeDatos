@@ -52,6 +52,8 @@ public class SalonEventoImpl implements SalonEventoService{
             return false;
         }
     }
+
+    //permite modificar los dias disponibles
     @Transactional
     public SalonEvento actualizarDisponibilidades(int salonEventoId, List<Disponibilidad> nuevasDisponibilidades) {
         System.out.println("Comenzando a actualizar el salón");
